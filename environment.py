@@ -1,13 +1,5 @@
 import numpy as np
-
-maze_configuration = np.array([
-    [0, 0, 0, 0, 0, 1],
-    [0, 0, 0, 0, 0, 1],
-    [0, 0, 1, 1, 1, 1],
-    [0, 0, 1, 0, 0, 1],
-    [0, 0, 0, 0, 0, 0],
-    [1, 1, 1, 1, 1, 1],
-])
+from constants import action_space, maze_configuration
 
 
 class Maze(object):

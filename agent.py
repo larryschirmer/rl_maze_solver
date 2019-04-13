@@ -1,13 +1,5 @@
 import numpy as np
-
-BIG_NUMBER = 10e15
-
-action_space = {
-    'U': (-1, 0),
-    'D': (1, 0),
-    'L': (0, 1),
-    'R': (0, 1)
-}
+from constants import big_number, action_space
 
 
 class Agent(object):
@@ -23,7 +15,7 @@ class Agent(object):
             self.G[state] = np.random.uniform(low=-1.0, high=1.0)
 
     def chooseAction(self, state, allowedMoves):
-        max_g = -BIG_NUMBER
+        max_g = -big_number
         next_move = None
         random_n = np.random.random()
 
@@ -51,6 +43,6 @@ class Agent(object):
             target += reward
 
         # slowly decrease the agents preference to explore
-        self.exploration_factor -= BIG_NUMBER
+        self.exploration_factor -= big_number
         # reset the state history
         self.stateHistory = []
