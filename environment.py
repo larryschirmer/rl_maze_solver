@@ -1,5 +1,4 @@
-import numpy as np
-from constants import action_space, maze_configuration
+from constants import action_space
 
 
 class Maze(object):

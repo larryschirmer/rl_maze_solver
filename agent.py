@@ -22,7 +22,7 @@ class Agent(object):
         if random_n < self.exploration_factor:
             next_move = np.random.choice(allowedMoves)
         else:
-            for action in action_space:
+            for action in allowedMoves:
                 new_state = tuple([sum(x)
                                    for x in zip(state, action_space[action])])
 
