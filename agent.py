@@ -1,5 +1,5 @@
 import numpy as np
-from constants import big_number, action_space
+from constants import big_number, action_space, AsciiPixel
 
 
 class Agent(object):
@@ -13,6 +13,31 @@ class Agent(object):
     def initReward(self, states):
         for state in states:
             self.G[state] = np.random.uniform(low=-1.0, high=1.0)
+
+    def printRewardMap(self):
+        min = big_number
+        max = -big_number
+        reward_map = np.empty((6, 6), dtype="U")
+
+        for state in self.G:
+            if self.G[state] < min:
+                min = self.G[state]
+
+            if self.G[state] > max:
+                max = self.G[state]
+
+        for state in self.G:
+            ascii_pixel = AsciiPixel(min, max)
+            y, x = state
+            reward_map[y][x] = ascii_pixel.getPixel(self.G[state])
+
+        print('- - - - - - - - - - - - - - - - - - - - -')
+        for row in reward_map:
+            for col in row:
+                print(col, end='\t')
+
+            print('\n')
+        print('- - - - - - - - - - - - - - - - - - - - -')
 
     def chooseAction(self, state, allowedMoves):
         max_g = -big_number

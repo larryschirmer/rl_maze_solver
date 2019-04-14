@@ -8,10 +8,12 @@ if __name__ == '__main__':
     maze = Maze(maze_configuration)
     robot = Agent(maze.allowed_states, alpha=0.1, exploration_factor=0.25)
     move_history = []
+    robot.printRewardMap()
 
     for episode in range(5000):
         if episode % 1000 == 0:
             print(episode)
+            robot.printRewardMap()
 
         while not maze.isGameOver():
             state, _ = maze.getStateAndReward()
@@ -27,7 +29,3 @@ if __name__ == '__main__':
         robot.learn()
         move_history.append(maze.steps)
         maze = Maze(maze_configuration)
-
-    plt.subplot(211)
-    plt.semilogy(move_history, 'b--')
-    plt.legend(['alpha=0.1'])
