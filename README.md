@@ -31,7 +31,7 @@ where:
 - `X` is a wall
 - `.` is navigable space
 
-and the bottom right corner `(5, 5)` is the end of the end of the maze.
+and the bottom right corner `(5, 5)` is the end of the maze.
 
 ### Training the agent and running the model
 
@@ -125,7 +125,7 @@ What makes this particular machine learning technique special is that teaching a
     python main.py
    ```
 
-   Expect to see five reward maps and an iteration numbers. The whole process is very fast, and should be done in a couple of seconds.
+   Expect to see the five reward maps appear in the console. The whole process is very fast, and should be done in a couple of seconds.
 
 1. Cleanup
 
