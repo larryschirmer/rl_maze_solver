@@ -18,7 +18,6 @@ maze_configuration = np.array([
     [1, 1, 1, 1, 1, 0],
 ])
 
-# http://mewbies.com/geek_fun_files/ascii/ascii_art_light_scale_and_gray_scale_chart.htm
 ascii_pixel = {
     0: '.',
     2: "'",
@@ -76,8 +75,8 @@ ascii_pixel = {
 
 class AsciiPixel(object):
     def __init__(self, min, max):
-        self.min = min  # y1
-        self.max = max  # y2
+        self.min = min
+        self.max = max
 
     def getPixel(self, value):
         rank = round(((value - self.min) / (self.max - self.min)) * 100)
