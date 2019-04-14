@@ -1,7 +1,6 @@
 import numpy as np
 from environment import Maze
 from agent import Agent
-import matplotlib.pyplot as plt
 from constants import maze_configuration
 
 if __name__ == '__main__':
